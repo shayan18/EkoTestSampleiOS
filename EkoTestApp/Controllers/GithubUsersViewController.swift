@@ -23,7 +23,6 @@ class GithubUsersViewController: UIViewController {
   
     // MARK: Properties
     let githubUsersViewModel = GithubUsersViewModel()
-    var selectedIndex = Int()
     var stateDict = [String:Bool]()
 
     override func viewDidLoad() {
@@ -81,7 +80,6 @@ extension GithubUsersViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       selectedIndex = indexPath.row
       let userGithubPageVC = GitHubUserPageViewController.instantiate()
         guard let githubURL = githubUsersViewModel.usersList[indexPath.row].htmlUrl else {return}
         userGithubPageVC.pageUrl = githubURL

@@ -9,8 +9,10 @@
 import UIKit
 import WebKit
 class GitHubUserPageViewController: UIViewController, Storyboarded {
-
+    // MARK: Outlets
     @IBOutlet weak private var githubWebView: WKWebView!
+    
+    // MARK: Properties
     var pageUrl = String()
     override func viewDidLoad() {
         super.viewDidLoad()
