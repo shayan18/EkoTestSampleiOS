@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="144" id="hFS-ZJ-lLm" customClass="GithubUsersTableViewCell" customModule="EkoTestApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="githubUser" rowHeight="144" id="hFS-ZJ-lLm" customClass="GithubUsersTableViewCell" customModule="EkoTestApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hFS-ZJ-lLm" id="6xl-dZ-eCi">
@@ -106,11 +106,52 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="GitHub Users" id="JpQ-Ty-gdA"/>
+                    <navigationItem key="navigationItem" title="GitHub Users" id="JpQ-Ty-gdA">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Utp-bZ-Rzy"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Ar2-s0-zHq" id="pAw-ID-a7M"/>
+                        <segue destination="Ras-mv-Bfg" kind="show" identifier="gotoUserGithubPage" id="ScD-7j-r0Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1167" y="7"/>
+        </scene>
+        <!--User Github-->
+        <scene sceneID="JNb-Ma-4jQ">
+            <objects>
+                <viewController id="Ras-mv-Bfg" customClass="UserGitHubPageViewController" customModule="EkoTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JAf-50-iGa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRE-1a-3p3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fRE-1a-3p3" firstAttribute="leading" secondItem="XOA-sU-TRD" secondAttribute="leading" id="1AF-QH-qvA"/>
+                            <constraint firstItem="fRE-1a-3p3" firstAttribute="top" secondItem="XOA-sU-TRD" secondAttribute="top" id="HmM-ec-Xga"/>
+                            <constraint firstItem="XOA-sU-TRD" firstAttribute="trailing" secondItem="fRE-1a-3p3" secondAttribute="trailing" id="Z8x-vv-A96"/>
+                            <constraint firstItem="XOA-sU-TRD" firstAttribute="bottom" secondItem="fRE-1a-3p3" secondAttribute="bottom" id="djZ-bP-fzT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XOA-sU-TRD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="User Github" id="Ikf-h2-ZWy"/>
+                    <connections>
+                        <outlet property="githubWebView" destination="fRE-1a-3p3" id="PWy-bE-Ykn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JHk-Ph-reX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2009" y="-100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z40-6K-9Fz">

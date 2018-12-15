@@ -11,6 +11,8 @@
 		B73C230D81D85E60D1E4DB0F /* Pods_EkoTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AFB774EFD5A63DD47D592D1 /* Pods_EkoTestAppTests.framework */; };
 		E306EDABA0632F3623EBDE92 /* Pods_EkoTestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9DD9A0AD8C12C040FC7B7E /* Pods_EkoTestAppUITests.framework */; };
 		E40C45A021C521BC00E89425 /* GithubUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40C459F21C521BC00E89425 /* GithubUsersTableViewCell.swift */; };
+		E40C45A221C5255000E89425 /* UserGithubPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40C45A121C5255000E89425 /* UserGithubPageViewController.swift */; };
+		E40C45A421C525D500E89425 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40C45A321C525D500E89425 /* Constants.swift */; };
 		E43466C621C519160028564D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43466C521C519160028564D /* AppDelegate.swift */; };
 		E43466C821C519160028564D /* GithubUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43466C721C519160028564D /* GithubUsersViewController.swift */; };
 		E43466CB21C519160028564D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E43466C921C519160028564D /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		BA0CECF95062994088F4C85C /* Pods-EkoTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EkoTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EkoTestAppTests/Pods-EkoTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5A741AC364F97E594854741 /* Pods-EkoTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EkoTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EkoTestAppTests/Pods-EkoTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		E40C459F21C521BC00E89425 /* GithubUsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUsersTableViewCell.swift; sourceTree = "<group>"; };
+		E40C45A121C5255000E89425 /* UserGithubPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGithubPageViewController.swift; sourceTree = "<group>"; };
+		E40C45A321C525D500E89425 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E43466C221C519160028564D /* EkoTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EkoTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E43466C521C519160028564D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E43466C721C519160028564D /* GithubUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUsersViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,49 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E40C45A521C5275B00E89425 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E43466C721C519160028564D /* GithubUsersViewController.swift */,
+				E40C45A121C5255000E89425 /* UserGithubPageViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E40C45A621C5276E00E89425 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E40C459F21C521BC00E89425 /* GithubUsersTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E40C45A721C5277B00E89425 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E43466C921C519160028564D /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E40C45A821C5279D00E89425 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E43466CE21C519160028564D /* LaunchScreen.storyboard */,
+				E43466C521C519160028564D /* AppDelegate.swift */,
+				E40C45A321C525D500E89425 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E40C45A921C527AF00E89425 /* Assests */ = {
+			isa = PBXGroup;
+			children = (
+				E43466CC21C519160028564D /* Assets.xcassets */,
+			);
+			path = Assests;
+			sourceTree = "<group>";
+		};
 		E43466B921C519160028564D = {
 			isa = PBXGroup;
 			children = (
@@ -139,12 +186,11 @@
 		E43466C421C519160028564D /* EkoTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				E43466C521C519160028564D /* AppDelegate.swift */,
-				E43466C721C519160028564D /* GithubUsersViewController.swift */,
-				E40C459F21C521BC00E89425 /* GithubUsersTableViewCell.swift */,
-				E43466C921C519160028564D /* Main.storyboard */,
-				E43466CC21C519160028564D /* Assets.xcassets */,
-				E43466CE21C519160028564D /* LaunchScreen.storyboard */,
+				E40C45A721C5277B00E89425 /* Storyboards */,
+				E40C45A521C5275B00E89425 /* Controllers */,
+				E40C45A621C5276E00E89425 /* Cells */,
+				E40C45A821C5279D00E89425 /* Helpers */,
+				E40C45A921C527AF00E89425 /* Assests */,
 				E43466D121C519160028564D /* Info.plist */,
 			);
 			path = EkoTestApp;
@@ -466,8 +512,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E40C45A421C525D500E89425 /* Constants.swift in Sources */,
 				E43466C821C519160028564D /* GithubUsersViewController.swift in Sources */,
 				E40C45A021C521BC00E89425 /* GithubUsersTableViewCell.swift in Sources */,
+				E40C45A221C5255000E89425 /* UserGithubPageViewController.swift in Sources */,
 				E43466C621C519160028564D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
