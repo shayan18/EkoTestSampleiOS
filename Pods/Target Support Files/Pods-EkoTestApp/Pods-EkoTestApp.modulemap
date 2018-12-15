@@ -1,0 +1,6 @@
+framework module Pods_EkoTestApp {
+  umbrella header "Pods-EkoTestApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
