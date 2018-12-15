@@ -23,6 +23,8 @@ class GithubUsersViewController: UIViewController {
   
     // MARK: Properties
     let githubUsersViewModel = GithubUsersViewModel()
+    var selectedIndex = Int()
+    var stateDict = [String:Bool]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +41,13 @@ class GithubUsersViewController: UIViewController {
     githubUsersViewModel.showGithubUsers()
 
     }
-    
 }
 
 // MARK: Buttons actions
 extension GithubUsersViewController: GithubUsersCellDelegate {
     
     func didTapButtonInCell(cell: GithubUsersTableViewCell) {
+       
         cell.favButton.isSelected = !cell.favButton.isSelected
     }
     @IBAction func retryButtonPressed(_ sender: Any) {
@@ -76,7 +78,7 @@ extension GithubUsersViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+       selectedIndex = indexPath.row
       let userGithubPageVC = GitHubUserPageViewController.instantiate()
         guard let githubURL = githubUsersViewModel.usersList[indexPath.row].htmlUrl else {return}
         userGithubPageVC.pageUrl = githubURL

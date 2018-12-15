@@ -41,7 +41,6 @@ class GithubUsersViewModel: NSObject {
         self.isLoadingData = false
     }
     
-    
     lazy var successCompletion: SuccessBlock = { [unowned self] (response) in
         let data = response.data
         let githubUsers = JSON(data: data).arrayValue

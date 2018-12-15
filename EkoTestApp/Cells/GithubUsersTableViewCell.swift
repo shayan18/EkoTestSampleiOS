@@ -33,6 +33,11 @@ class GithubUsersTableViewCell: UITableViewCell {
         }
     }
     
+    override func awakeFromNib() {
+        userNameLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        userNameLabel.adjustsFontForContentSizeCategory = true
+    }
+    
     @IBAction func favButtonTapped(_ sender: UIButton) {
         delegate?.didTapButtonInCell(cell: self)
     }
