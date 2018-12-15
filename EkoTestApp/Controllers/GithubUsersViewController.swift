@@ -47,8 +47,10 @@ class GithubUsersViewController: UIViewController {
 extension GithubUsersViewController: GithubUsersCellDelegate {
     
     func didTapButtonInCell(cell: GithubUsersTableViewCell) {
-       
-        cell.favButton.isSelected = !cell.favButton.isSelected
+        let index  = tableView.indexPath(for: cell)
+        let tempBool =  cell.favButton.isSelected
+        cell.favButton.isSelected = !tempBool
+        githubUsersViewModel.usersList[index!.row].isFav = !tempBool
     }
     @IBAction func retryButtonPressed(_ sender: Any) {
         getGithubUsers()
@@ -64,6 +66,7 @@ extension GithubUsersViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.githubUser, for: indexPath) as! GithubUsersTableViewCell
         cell.githubUser = githubUsersViewModel.usersList[indexPath.row]
+        cell.favButton.isSelected = githubUsersViewModel.usersList[indexPath.row].isFav
         cell.delegate = self
         return cell
     }

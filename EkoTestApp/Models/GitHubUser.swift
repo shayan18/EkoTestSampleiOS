@@ -50,6 +50,8 @@ public struct GitHubUser {
   public var nodeId: String?
   public var url: String?
   public var eventsUrl: String?
+  public var isFav = false
+    
 
   // MARK: SwiftyJSON Initializers
   /// Initiates the instance based on the object.
