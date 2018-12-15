@@ -7,7 +7,11 @@
 //
 
 import UIKit
+import SDWebImage
 
+protocol GithubUsersCellDelegate: class {
+   func didTapButtonInCell( cell: GithubUsersTableViewCell)
+}
 class GithubUsersTableViewCell: UITableViewCell {
     // MARK: Outlets
     @IBOutlet weak private var userProfileImageView: UIImageView!
@@ -15,17 +19,21 @@ class GithubUsersTableViewCell: UITableViewCell {
     @IBOutlet weak private var linkLabel: UILabel!
     @IBOutlet weak private var typeLabel: UILabel!
     @IBOutlet weak private var adminStatusLabel: UILabel!
-
+    @IBOutlet weak var favButton: UIButton!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: Properties
+    weak var delegate: GithubUsersCellDelegate?
+    var githubUser: GitHubUser! {
+        didSet {
+            userProfileImageView.sd_setImage(with: URL(string: githubUser.avatarUrl ?? "") )
+            userNameLabel.text = "Name: \(githubUser.login ?? "NA")"
+            linkLabel.text = githubUser.url ?? "NA"
+            typeLabel.text = "Type: \(githubUser.type ?? "NA")"
+            adminStatusLabel.text = "Admin: \(githubUser.siteAdmin == false ? "NO" : "YES")"
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBAction func favButtonTapped(_ sender: UIButton) {
+        delegate?.didTapButtonInCell(cell: self)
     }
-
 }

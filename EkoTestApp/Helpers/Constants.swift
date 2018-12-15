@@ -8,6 +8,12 @@
 
 import Foundation
 
+struct Constants {
+    
+    static let  baseUrl = "https://api.github.com/"
+    
+}
+
 struct SegueIdentifiers {
     
     static let  userGithubPage = "gotoUserGithubPage"

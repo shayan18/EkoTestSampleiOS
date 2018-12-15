@@ -6,7 +6,7 @@ target 'EkoTestApp' do
   use_frameworks!
 
   # Pods for EkoTestApp
-    pod 'SwiftyJSON'
+    pod 'SwiftyJSON', '~> 3.1.4'
     pod 'Moya'
     pod 'SDWebImage', '~> 4.0'
 
