@@ -91,8 +91,8 @@ extension GithubUsersViewController: GithubUsersDelegate {
     func usersFetched(hasUsers: Bool) {
         
         spinner.stopAnimating()
-        noDataLabel.isHidden = true
-        retryButton.isHidden = true
+        noDataLabel.isHidden = !hasUsers
+        retryButton.isHidden = !hasUsers
         hasUsers ? tableView.reloadData() : self.showAlert(title: "Oops", message: "No Users to show")
 
     }
@@ -100,10 +100,9 @@ extension GithubUsersViewController: GithubUsersDelegate {
     func usersFetchFailed(message: String) {
         spinner.stopAnimating()
         self.showAlert(title: "Oops", message: message)
-        if githubUsersViewModel.usersList.isEmpty {
-            noDataLabel.isHidden = false
-            retryButton.isHidden = false
-        }
+        noDataLabel.isHidden = !githubUsersViewModel.usersList.isEmpty
+        retryButton.isHidden = !githubUsersViewModel.usersList.isEmpty
+    
       
 
     }

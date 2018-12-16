@@ -161,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="914" y="-17"/>
         </scene>
-        <!--User Github-->
+        <!--User Profile-->
         <scene sceneID="JNb-Ma-4jQ">
             <objects>
                 <viewController storyboardIdentifier="GitHubUserPageViewController" id="Ras-mv-Bfg" customClass="GitHubUserPageViewController" customModule="EkoTestApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,7 +187,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XOA-sU-TRD"/>
                     </view>
-                    <navigationItem key="navigationItem" title="User Github" id="Ikf-h2-ZWy"/>
+                    <navigationItem key="navigationItem" title="User Profile" id="Ikf-h2-ZWy"/>
                     <connections>
                         <outlet property="githubWebView" destination="fRE-1a-3p3" id="PWy-bE-Ykn"/>
                     </connections>
