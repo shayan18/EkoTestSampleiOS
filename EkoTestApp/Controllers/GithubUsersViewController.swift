@@ -73,7 +73,6 @@ extension GithubUsersViewController: UITableViewDelegate, UITableViewDataSource 
         
         if indexPath.row == githubUsersViewModel.usersList.count-1{
             
-            githubUsersViewModel.currentPage += 1
             githubUsersViewModel.showGithubUsers()
             
         }
@@ -92,20 +91,20 @@ extension GithubUsersViewController: GithubUsersDelegate {
     func usersFetched(hasUsers: Bool) {
         
         spinner.stopAnimating()
-        tableView.reloadData()
         noDataLabel.isHidden = true
         retryButton.isHidden = true
+        hasUsers ? tableView.reloadData() : self.showAlert(title: "Oops", message: "No Users to show")
 
-        if !hasUsers{
-            self.showAlert(title: "Oops", message: "No Users to show")
-        }
     }
     
     func usersFetchFailed(message: String) {
         spinner.stopAnimating()
         self.showAlert(title: "Oops", message: message)
-        noDataLabel.isHidden = false
-        retryButton.isHidden = false
+        if githubUsersViewModel.usersList.isEmpty {
+            noDataLabel.isHidden = false
+            retryButton.isHidden = false
+        }
+      
 
     }
 }

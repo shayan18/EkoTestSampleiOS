@@ -47,7 +47,9 @@ class GithubUsersViewModel: NSObject {
         for user in githubUsers {
             self.usersList.append(GitHubUser(json: user))
         }
+        guard let lastId = self.usersList.last?.id else {return self.isLoadingData = true}
         
+        self.currentPage = lastId
         self.usersList.isEmpty ? self.delegate?.usersFetched(hasUsers: false) : self.delegate?.usersFetched(hasUsers: true)
     }
     
@@ -58,6 +60,7 @@ class GithubUsersViewModel: NSObject {
     }
     
     func showGithubUsers(){
+        if isLoadingData{ return }
         self.isLoadingData = true
         githubUsersProvider.request(.showUsers(since: currentPage)) { (result) in
               self.resultCompletion(result)

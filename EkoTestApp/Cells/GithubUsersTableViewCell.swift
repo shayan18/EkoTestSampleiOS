@@ -25,6 +25,8 @@ class GithubUsersTableViewCell: UITableViewCell {
     weak var delegate: GithubUsersCellDelegate?
     var githubUser: GitHubUser! {
         didSet {
+            userProfileImageView.sd_setShowActivityIndicatorView(true)
+            userProfileImageView.sd_setIndicatorStyle(.gray)
             userProfileImageView.sd_setImage(with: URL(string: githubUser.avatarUrl ?? "") )
             userNameLabel.text = "Name: \(githubUser.login ?? "NA")"
             linkLabel.text = githubUser.url ?? "NA"
