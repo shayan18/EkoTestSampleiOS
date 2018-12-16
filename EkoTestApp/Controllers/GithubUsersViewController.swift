@@ -14,6 +14,7 @@ class GithubUsersViewController: UIViewController {
     @IBOutlet weak private var retryButton: UIButton!
     @IBOutlet weak private var spinner: UIActivityIndicatorView!
     @IBOutlet weak private var noDataLabel: UILabel!
+    @IBOutlet weak private var emptyStateView: UIView!
     @IBOutlet weak private var tableView: UITableView! {
         didSet {
             tableView.delegate = self
@@ -91,8 +92,8 @@ extension GithubUsersViewController: GithubUsersDelegate {
     func usersFetched(hasUsers: Bool) {
         
         spinner.stopAnimating()
-        noDataLabel.isHidden = !hasUsers
-        retryButton.isHidden = !hasUsers
+        emptyStateView.isHidden = !githubUsersViewModel.usersList.isEmpty
+        
         hasUsers ? tableView.reloadData() : self.showAlert(title: "Oops", message: "No Users to show")
 
     }
@@ -100,10 +101,8 @@ extension GithubUsersViewController: GithubUsersDelegate {
     func usersFetchFailed(message: String) {
         spinner.stopAnimating()
         self.showAlert(title: "Oops", message: message)
-        noDataLabel.isHidden = !githubUsersViewModel.usersList.isEmpty
-        retryButton.isHidden = !githubUsersViewModel.usersList.isEmpty
+        emptyStateView.isHidden = !githubUsersViewModel.usersList.isEmpty
     
-      
 
     }
 }

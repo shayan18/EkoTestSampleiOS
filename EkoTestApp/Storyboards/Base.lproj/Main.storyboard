@@ -107,22 +107,39 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCR-fW-mez">
-                                <rect key="frame" x="20" y="320.5" width="335" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OI8-7Z-Her">
-                                <rect key="frame" x="166.5" y="366" width="41" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Retry"/>
-                                <connections>
-                                    <action selector="retryButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="orQ-iO-6Ql"/>
-                                </connections>
-                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COK-Or-cis">
+                                <rect key="frame" x="37" y="167" width="300" height="333.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1dd-02-TBS">
+                                        <rect key="frame" x="10" y="124.5" width="280" height="86"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCR-fW-mez">
+                                                <rect key="frame" x="66.5" y="0.0" width="147.5" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OI8-7Z-Her">
+                                                <rect key="frame" x="119.5" y="53" width="41" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="Retry"/>
+                                                <connections>
+                                                    <action selector="retryButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="orQ-iO-6Ql"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="1dd-02-TBS" firstAttribute="leading" secondItem="COK-Or-cis" secondAttribute="leading" constant="10" id="2NB-Fv-ID6"/>
+                                    <constraint firstItem="1dd-02-TBS" firstAttribute="centerY" secondItem="COK-Or-cis" secondAttribute="centerY" id="Cqf-Wf-xpf"/>
+                                    <constraint firstItem="1dd-02-TBS" firstAttribute="centerX" secondItem="COK-Or-cis" secondAttribute="centerX" id="a36-oa-dz9"/>
+                                    <constraint firstAttribute="trailing" secondItem="1dd-02-TBS" secondAttribute="trailing" constant="10" id="tVB-ri-DwD"/>
+                                </constraints>
+                            </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4RQ-Jn-92Z">
-                                <rect key="frame" x="163" y="242" width="50" height="50"/>
+                                <rect key="frame" x="162.5" y="242" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="9GI-fN-WAR"/>
                                     <constraint firstAttribute="height" constant="50" id="d61-Mw-072"/>
@@ -132,18 +149,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lCR-fW-mez" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6CD-qe-yIX"/>
+                            <constraint firstItem="COK-Or-cis" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0fj-U9-hpG"/>
+                            <constraint firstItem="COK-Or-cis" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1YL-0d-ZIR"/>
+                            <constraint firstItem="COK-Or-cis" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="3we-IW-GYa"/>
                             <constraint firstItem="Ar2-s0-zHq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9H4-xh-dpu"/>
                             <constraint firstItem="4RQ-Jn-92Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O0A-F2-s02"/>
-                            <constraint firstItem="lCR-fW-mez" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RSS-5r-L71"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ar2-s0-zHq" secondAttribute="trailing" id="YgZ-ox-LEu"/>
                             <constraint firstItem="4RQ-Jn-92Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.8" id="aeU-WR-mNg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lCR-fW-mez" secondAttribute="trailing" constant="20" id="anX-DB-dgX"/>
+                            <constraint firstItem="COK-Or-cis" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="bmp-o3-fci"/>
                             <constraint firstItem="Ar2-s0-zHq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="df5-ob-Tp9"/>
-                            <constraint firstItem="lCR-fW-mez" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fME-Hv-jSi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ar2-s0-zHq" secondAttribute="bottom" id="gHT-CZ-xe3"/>
-                            <constraint firstItem="OI8-7Z-Her" firstAttribute="top" secondItem="lCR-fW-mez" secondAttribute="bottom" constant="20" id="hA7-gr-MVN"/>
-                            <constraint firstItem="OI8-7Z-Her" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r7j-O4-t7n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -151,6 +166,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="Utp-bZ-Rzy"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyStateView" destination="COK-Or-cis" id="5LI-4h-LtG"/>
                         <outlet property="noDataLabel" destination="lCR-fW-mez" id="C6R-wC-AZm"/>
                         <outlet property="retryButton" destination="OI8-7Z-Her" id="4kB-rH-8t1"/>
                         <outlet property="spinner" destination="4RQ-Jn-92Z" id="IBH-Dq-0xB"/>
@@ -159,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="914" y="-17"/>
+            <point key="canvasLocation" x="912.79999999999995" y="-17.541229385307346"/>
         </scene>
         <!--User Profile-->
         <scene sceneID="JNb-Ma-4jQ">
